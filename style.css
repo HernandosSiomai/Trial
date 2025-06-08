@@ -183,18 +183,48 @@ footer {
 
 /* Mobile */
 @media (max-width: 600px) {
+  
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 56px;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #fff;
+  }
+
+  header p {
+    display: none; /* Hide the tagline */
+  }
+
   nav {
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
   }
 
-  .gallery-container img {
-    width: 100%;
-    height: auto;
+  nav a {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    background: none;
   }
 
-  .menu-grid {
-    grid-template-columns: 1fr;
+  nav a:hover {
+    background-color: #8B0000;
+  }
+
+  body {
+    padding-top: 56px; /* Prevent content from being hidden under header */
   }
 }
 
