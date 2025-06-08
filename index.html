@@ -1,0 +1,175 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hernando's</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <style>
+      /* Highlight animation for image zoom */
+      .highlight-img {
+        transform: scale(1.05) !important;
+        filter: grayscale(30%) !important;
+        box-shadow: 0 8px 20px rgba(178, 34, 34, 0.4) !important;
+        transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      /* Highlight animation for sections */
+      .highlight-section {
+        animation: sectionPulse 1s ease-in-out;
+        box-shadow: 0 0 15px 5px rgba(255, 76, 76, 0.4); /* Soft red glow */
+        border-color: #FF4C4C;
+      }
+
+      @keyframes sectionPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+      }
+
+      .lightbox {
+        display: none;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 999;
+      }
+
+      .lightbox.show {
+        display: flex;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+
+      /* Sticky Header Styling */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: #111;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      header.hidden {
+        transform: translateY(-100%);
+      }
+
+      header nav a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: firebrick ;
+        font-weight: 500;
+      }
+
+      header nav a:hover {
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header id="stickyHeader"> 
+      <div class="header-inner">
+      <h1>Hernando’s</h1>
+      <p>Bigaten sa Meaty Sarap</p>
+      <nav>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu-gallery" class="nav-link">Menu & Gallery</a>
+        <a href="#location" class="nav-link">Location</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+    </header>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Hernando’s serves delicious siomai meals that are rich in flavor and satisfaction. Though our business faces challenges with the students’ changing class schedules, we adapt by bringing our siomai to different locations when there are no classes at CvSU Imus. Wherever you are, we aim to satisfy your siomai cravings.</p>
+    </section>
+
+    <section id="menu-gallery">
+      <h2>Our Menu & Gallery</h2>
+
+      <!-- Siomai Menu -->
+      <h3>Siomai</h3>
+      <div class="menu-grid">
+        <a href="#pork-siomai" class="menu-item"><span>Pork Siomai</span> <span>₱30</span></a>
+        <a href="#beef-siomai" class="menu-item"><span>Beef Siomai</span> <span>₱30</span></a>
+        <a href="#japanese-siomai" class="menu-item"><span>Japanese Siomai</span> <span>₱35</span></a>
+        <a href="#sharks-fin" class="menu-item"><span>Shark's Fin</span> <span>₱30</span></a>
+      </div>
+
+      <div class="gallery-container">
+        <img id="pork-siomai" src="images/siomai1.jpg" alt="Pork Siomai" />
+        <img id="beef-siomai" src="images/siomai2.jpg" alt="Beef Siomai" />
+        <img id="japanese-siomai" src="images/siomai3.jpg" alt="Japanese Siomai" />
+        <img id="sharks-fin" src="images/siomai4.jpg" alt="Shark's Fin" />
+      </div>
+
+      <!-- Rice Meals Menu -->
+      <h3>Rice Meals</h3>
+      <div class="menu-grid">
+        <a href="#jumbo-siomai-rice" class="menu-item"><span>Jumbo Siomai Rice</span> <span>₱55</span></a>
+        <a href="#siomai-rice" class="menu-item"><span>Siomai Rice (Regular)</span> <span>₱45</span></a>
+      </div>
+
+      <div class="gallery-container">
+        <img id="jumbo-siomai-rice" src="images/siomai_rice1.jpg" alt="Jumbo Siomai Rice" />
+        <img id="siomai-rice" src="images/siomai_rice2.jpg" alt="Siomai Rice" />
+      </div>
+
+    </section>
+
+    <section id="location">
+      <h2>Location</h2>
+      <p>Unit 4, Food Plaza, Imus, Cavite</p>
+      <p>Open daily: 9:00 AM – 10:00 PM</p>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d341.53076397182133!2d120.94703730969181!3d14.428344582537123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d25e0e84f8ff%3A0x31dbaaf04f536833!2sCAVSU!5e0!3m2!1sen!2sph!4v1748465321991!5m2!1sen!2sph" width="300" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Facebook: <a href="https://facebook.com/profile.php?id=100094945910299">Jave street</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Hernando's. All rights reserved.</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+      <img src="" alt="Enlarged Image" />
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      let lastScrollTop = 0;
+      const header = document.getElementById('stickyHeader');
+
+      window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          header.classList.add('hidden'); // Hide on scroll down
+        } else {
+          header.classList.remove('hidden'); // Show on scroll up
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    </script>
+
+  </body>
+  </html>
